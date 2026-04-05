@@ -26,6 +26,7 @@
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./icons/android/playstore-icon.png"
       },
+      "usesCleartextTraffic": true,
       "predictiveBackGestureEnabled": false
     },
     "web": {

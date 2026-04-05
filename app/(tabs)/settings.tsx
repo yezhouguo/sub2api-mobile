@@ -44,10 +44,16 @@ function getConnectionErrorMessage(error: unknown) {
     switch (error.message) {
       case 'BASE_URL_REQUIRED':
         return '请先填写服务器地址。';
+      case 'BASE_URL_INVALID':
+        return '服务器地址格式不正确，请填写完整的 http:// 或 https:// 地址。';
+      case 'BASE_URL_LOCALHOST_UNREACHABLE':
+        return '当前地址使用了 localhost 或 127.0.0.1。真机 APK 无法访问你电脑本机地址，请改成局域网 IP 或可公网访问的地址。';
       case 'ADMIN_API_KEY_REQUIRED':
         return '请先填写 Admin Key。';
       case 'INVALID_SERVER_RESPONSE':
         return '当前地址返回的数据不正确，请确认它是可用的管理接口。';
+      case 'NETWORK_REQUEST_FAILED':
+        return '网络请求失败。若你填写的是 http:// 地址，请重新打包安装包含 Android 明文网络权限的新版 APK；若不是，请检查服务器是否可达。';
       default:
         return error.message;
     }
